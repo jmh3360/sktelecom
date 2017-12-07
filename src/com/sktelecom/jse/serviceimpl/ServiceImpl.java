@@ -28,6 +28,7 @@ public class ServiceImpl implements Service{
 	}
 	@Override
 	public String showMessage(MemberBean member, SkTelecomBean skt) {
+		
 		skt.setNumber(makeNumber());
 		String message = String.format("[%s]님 이름으로 [%s] [%s]폰이 개통되었습니다.", member.getName(),skt.getNumber()
 				,skt.getName());
@@ -38,11 +39,9 @@ public class ServiceImpl implements Service{
 	@Override
 	public String makeNumber() {
 		
-		
 	
-		
-		return "010-"+String.valueOf((int) (Math.random() * 10000+9999))+"-"
-		+String.valueOf((int) (Math.random() * 10000+9999)) ;
+		return "010-"+String.valueOf((int) (Math.random() * 9000+1000))+"-"
+		+String.valueOf((int) (Math.random() * 9000+1000)) ;
 	}
 }
 
